@@ -26,7 +26,9 @@ import { pluginCustomCopyButton } from "./src/plugins/expressive-code/custom-cop
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://example.com",
+	// Use the project-site URL until the real custom domain is configured.
+	site: "https://huangpenguin.github.io",
+	base: "/personal-blog",
 	trailingSlash: "always",
 	integrations: [
 		tailwind({
