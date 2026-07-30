@@ -45,7 +45,9 @@ if (!banner || typeof banner !== "string" || banner.trim() === "") {
 // TODO don't use post cover as banner for now
 banner = siteConfig.banner.src;
 
-const enableBanner = siteConfig.banner.enable;
+// The hero is intentionally home-only. Applying its height to archive/about leaves
+// those pages with a large empty header area.
+const enableBanner = siteConfig.banner.enable && isHomePage;
 
 let pageTitle: string;
 if (title) {
@@ -380,7 +382,7 @@ function initCustomScrollbar() {
 }
 
 function showBanner() {
-	if (!siteConfig.banner.enable) return;
+	if (!document.body.classList.contains('enable-banner')) return;
 
 	const banner = document.getElementById('banner');
 	if (!banner) {
