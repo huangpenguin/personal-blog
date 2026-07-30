@@ -192,6 +192,34 @@ const bannerOffset =
 		@apply opacity-0 -translate-y-16
 	}
 }
+
+/* Original anime-inspired digital-garden treatment: twilight glows, glass cards,
+   and a soft overlay so the banner remains readable rather than decorative only. */
+body {
+	background-image:
+		radial-gradient(circle at 12% 8%, oklch(0.82 0.12 300 / 0.28), transparent 28rem),
+		radial-gradient(circle at 88% 28%, oklch(0.78 0.10 235 / 0.18), transparent 30rem);
+}
+
+.enable-banner #banner-wrapper::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(90deg, oklch(0.18 0.05 285 / 0.48), transparent 58%, oklch(0.16 0.04 285 / 0.22));
+	pointer-events: none;
+}
+
+.card-base,
+#sidebar-sticky,
+#content-wrapper > * {
+	border: 1px solid oklch(1 0.02 285 / 0.24);
+	box-shadow: 0 18px 45px oklch(0.20 0.07 285 / 0.14);
+	backdrop-filter: blur(14px);
+}
+
+h1, h2, h3, .site-title {
+	letter-spacing: 0.025em;
+}
 </style>
 
 <script>
