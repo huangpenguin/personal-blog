@@ -13,8 +13,8 @@ import {
 	BANNER_HEIGHT_EXTEND,
 	MAIN_PANEL_OVERLAPS_BANNER_HEIGHT,
 } from "../constants/constants";
-import Layout from "./Layout.astro";
 import { pathsEqual, url } from "../utils/url-utils";
+import Layout from "./Layout.astro";
 
 interface Props {
 	title?: string;
@@ -35,8 +35,7 @@ const {
 } = Astro.props;
 const hasBanner =
 	siteConfig.banner.enable && pathsEqual(Astro.url.pathname, url("/"));
-const hasBannerCredit =
-	hasBanner && siteConfig.banner.credit.enable;
+const hasBannerCredit = hasBanner && siteConfig.banner.credit.enable;
 const hasBannerLink = !!siteConfig.banner.credit.url;
 
 const mainPanelTop = hasBanner

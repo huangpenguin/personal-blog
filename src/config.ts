@@ -8,8 +8,8 @@ import type {
 import { LinkPreset } from "./types/config";
 
 export const siteConfig: SiteConfig = {
-	title: "黄澎彬的数字花园",
-	subtitle: "学习、项目与技术笔记",
+	title: "PB NEXUS",
+	subtitle: "Research · Systems · Field Notes",
 	lang: "zh_CN", // Language code, e.g. 'en', 'zh_CN', 'ja', etc.
 	themeColor: {
 		hue: 285, // Twilight violet, matching the anime study-room banner
@@ -46,16 +46,16 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.About,
 		{
 			name: "GitHub",
-			url: "https://github.com/huangpenguin/my-obsidian-vault", // Internal links should not include the base path, as it is automatically added
+			url: "https://github.com/huangpenguin", // Internal links should not include the base path, as it is automatically added
 			external: true, // Show an external link icon and will open in a new tab
 		},
 	],
 };
 
 export const profileConfig: ProfileConfig = {
-	avatar: "https://github.com/huangpenguin.png",
-	name: "黄澎彬",
-	bio: "学习、项目与技术笔记。",
+	avatar: "",
+	name: "PB NEXUS",
+	bio: "Research, systems, and field notes.",
 	links: [
 		{
 			name: "GitHub",

@@ -1,6 +1,6 @@
-# 黄澎彬的数字花园
+# PB NEXUS
 
-基于 [Astro](https://astro.build/) 与 Fuwari 的个人笔记博客，使用原创日系夜读风主题，部署在 GitHub Pages。
+基于 [Astro](https://astro.build/) 与 Fuwari 的个人研究笔记站点，使用原创日系夜读风主题，部署在 GitHub Pages。
 
 网站地址：[huangpenguin.github.io/personal-blog](https://huangpenguin.github.io/personal-blog/)
 

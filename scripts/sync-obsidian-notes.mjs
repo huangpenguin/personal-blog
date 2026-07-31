@@ -23,8 +23,9 @@ function withoutExtension(value) {
 	return value.replace(/\.(md|markdown)$/i, "");
 }
 
-function toDate(value) {
-	return new Date(value).toISOString().slice(0, 10);
+function toDate(value, fallback) {
+	const date = new Date(value);
+	return Number.isNaN(date.getTime()) ? fallback : date.toISOString().slice(0, 10);
 }
 
 function gitDate(relativePath, initial) {
@@ -154,8 +155,8 @@ for (const entry of published) {
 	const output = [
 		"---",
 		`title: ${JSON.stringify(title)}`,
-		`published: ${frontmatterValue(entry.frontmatter, "published") ?? toDate(created)}`,
-		`updated: ${frontmatterValue(entry.frontmatter, "updated") ?? toDate(updated)}`,
+		`published: ${toDate(frontmatterValue(entry.frontmatter, "published"), toDate(created))}`,
+		`updated: ${toDate(frontmatterValue(entry.frontmatter, "updated"), toDate(updated))}`,
 		`draft: ${frontmatterValue(entry.frontmatter, "draft") === "true" ? "true" : "false"}`,
 		`description: ${JSON.stringify(description)}`,
 		`tags: ${JSON.stringify(frontmatterTags(entry.frontmatter))}`,
